@@ -6,14 +6,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:weightSum="100"
-    android:background="@color/lightYellow"
+    android:background="@android:color/holo_blue_light"
     android:gravity="center_vertical">
 
     <View
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/mediumYellow"/>
+        android:background="@color/darkYellow"/>
 
     <TextView
         android:layout_width="0dp"

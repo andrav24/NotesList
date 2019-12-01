@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import tech.andrav.noteslist.adapters.NotesRecyclerAdapter;
 import tech.andrav.noteslist.models.Note;
+import tech.andrav.noteslist.util.VerticalSpacingItemDecorator;
 
 public class NotesListActivity extends AppCompatActivity {
 
@@ -48,6 +49,8 @@ public class NotesListActivity extends AppCompatActivity {
     private void initRecyclerView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);
+        VerticalSpacingItemDecorator itemDecorator = new VerticalSpacingItemDecorator(10);
+        mRecyclerView.addItemDecoration(itemDecorator);
         mNotesRecyclerAdapter = new NotesRecyclerAdapter(mNotes);
         mRecyclerView.setAdapter(mNotesRecyclerAdapter);
     }
