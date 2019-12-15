@@ -1,6 +1,7 @@
 package tech.andrav.noteslist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,16 +24,20 @@ public class NotesListActivity extends AppCompatActivity {
     // vars
     private ArrayList<Note> mNotes = new ArrayList<>();
     private NotesRecyclerAdapter mNotesRecyclerAdapter;
-
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes_list);
         mRecyclerView = findViewById(R.id.recyclerView);
+        mToolbar = findViewById(R.id.notes_toolbar);
 
         initRecyclerView();
         insertFakeNotes();
+
+        setSupportActionBar(mToolbar);
+        setTitle(getString(R.string.notes_title));
     }
 
     private void insertFakeNotes(){
